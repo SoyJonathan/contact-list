@@ -1,4 +1,4 @@
-let listaContactos = ["Zeus", "Poseidon", "Hades"];
+let listaContactos = ["Zeus", "Poseidon", "Hades", "Hercules"];
 
 function agregarContacto(nombre) {
   listaContactos.push(nombre);
