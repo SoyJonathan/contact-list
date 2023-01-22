@@ -1,13 +1,30 @@
-let listaContactos = ["Zeus", "Poseidon", "Hades", "Hercules"];
+let listaContactos = [
+  {
+    id: 1098745311,
+    nombres: "Marlon Andres",
+    apellidos: "Suarez Davila",
+    telefono: 3215550267,
+    ubicacion: { ciudad: "Cali", direccion: "calle de los estudiantes" },
+  },
+];
+let persona1 = {
+  id: 1098748888,
+  nombres: "Carlos Santiago",
+  apellidos: "Martinez Rodriguez",
+  telefono: 3215550078,
+  ubicacion: { ciudad: "Bogota", direccion: "calle de los artesanos" },
+};
 
-function agregarContacto(nombre) {
-  listaContactos.push(nombre);
+function agregarContacto(persona) {
+  listaContactos.push(persona);
   listaContactos.sort();
 }
 
-const borrarContacto = function (nombre) {
+agregarContacto(persona1);
+
+const borrarContacto = function (persona) {
   let nuevaLista = listaContactos.filter(
-    (listaContactos) => nombre !== listaContactos
+    (listaContactos) => persona !== listaContactos
   );
   listaContactos = nuevaLista;
 };
