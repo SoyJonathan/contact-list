@@ -17,10 +17,7 @@ let persona1 = {
 
 function agregarContacto(persona) {
   listaContactos.push(persona);
-  listaContactos.sort();
 }
-
-agregarContacto(persona1);
 
 const borrarContacto = function (persona) {
   let nuevaLista = listaContactos.filter(
@@ -29,9 +26,41 @@ const borrarContacto = function (persona) {
   listaContactos = nuevaLista;
 };
 
+const actualizar = (
+  id,
+  nombresNuevos,
+  apellidosNuevos,
+  telefonoNuevo,
+  ciudadNueva,
+  direccionNueva
+) => {
+  for (let i = 0; i < listaContactos.length; i++) {
+    if (listaContactos[i].id === id) {
+      listaContactos[i] = {
+        id,
+        nombres: nombresNuevos,
+        apellidos: apellidosNuevos,
+        telefono: telefonoNuevo,
+        ubicacion: { ciudad: ciudadNueva, direccion: direccionNueva },
+      };
+    }
+  }
+};
+
 const mostrar = () => {
   listaContactos.sort();
   for (let i = 0; i < listaContactos.length; i++) {
     console.log(listaContactos[i]);
   }
 };
+//borrarContacto(listaContactos[0]);
+agregarContacto(persona1);
+actualizar(
+  1098745311,
+  "Felipe",
+  "Mosquera",
+  3178996477,
+  "Bucaramanga",
+  "Calle 8"
+);
+console.log(mostrar());
